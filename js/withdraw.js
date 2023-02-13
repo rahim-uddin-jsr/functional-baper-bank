@@ -1,4 +1,14 @@
 document.getElementById("withdraw-btn").addEventListener("click", () => {
-    console.log("btn clicked");
-    
+  const withdrawInputValue = getInputFieldValue("withdraw-amount-input");
+  const withdrawTotalValue = getTextElementValue("withdraw-total");
+  const ballanceTotalValue = getTextElementValue("ballance-total");
+
+  setTextElementValue(
+    "withdraw-total",
+    withdrawTotalValue + withdrawInputValue
+  );
+  setTextElementValue(
+    "ballance-total",
+    ballanceTotalValue - withdrawInputValue
+  );
 });
